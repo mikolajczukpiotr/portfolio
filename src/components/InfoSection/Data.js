@@ -4,7 +4,7 @@ export const homeObjOne = {
   lightText: false,
   lightTextDesc: false,
   topLine: "O MNIE",
-  headline: "Hej jestem PIOTR",
+  headline: "Hej jestem Piotr",
   description:
     "Jestem młodym kreatywnym, młodym programistą. Podczas pisania kodu, zawsze zwracam uwagę na detale. Staram otaczać się ludźmi przy których mogę się rozwijać. Jestem otwarty na wszelkiego rodzaju wskazówki, które pomogą rozwijać moje umiejętności.\n",
   imgStart: false,
