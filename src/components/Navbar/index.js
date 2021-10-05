@@ -11,7 +11,7 @@ import {
   NavLogo,
   NavMenu,
 } from "./NavbarElements";
-import { AiFillGithub } from "react-icons/all";
+import {AiFillGithub, AiFillLinkedin, AiFillTwitterCircle} from "react-icons/all";
 
 const Navbar = ({ isOpen, toggle }) => {
   return (
@@ -34,8 +34,14 @@ const Navbar = ({ isOpen, toggle }) => {
             </NavItem>
           </NavMenu>
           <NavBtn>
-            <NavBtnLink>
-              <AiFillGithub to="https://github.com/mikolajczukpiotr"></AiFillGithub>
+            <NavBtnLink href="https://github.com/mikolajczukpiotr">
+              <AiFillGithub></AiFillGithub>
+            </NavBtnLink>
+            <NavBtnLink href="https://twitter.com/divensek">
+              <AiFillTwitterCircle></AiFillTwitterCircle>
+            </NavBtnLink>
+            <NavBtnLink href="https://www.linkedin.com/in/piotr-miko%C5%82ajczuk-38b1b0195/">
+              <AiFillLinkedin></AiFillLinkedin>
             </NavBtnLink>
           </NavBtn>
         </NavbarContainer>

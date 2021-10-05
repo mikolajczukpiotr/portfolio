@@ -93,11 +93,12 @@ export const NavBtn = styled.nav`
     display: none;
   }
 `;
-export const NavBtnLink = styled.div`
-  border-radius: 50px;
+export const NavBtnLink = styled.a`
+  margin-left: 14px;
+  border-radius: 40px;
   background: #87c2e9;
   white-space: nowrap;
-  padding: 10px 22px;
+  padding: 8px 20px;
   color: #010606;
   font-size: 24px;
   border: none;
