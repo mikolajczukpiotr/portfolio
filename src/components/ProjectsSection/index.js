@@ -11,7 +11,7 @@ import {
 
 export default function ProjectSection() {
   return (
-      <SectionProjects>
+      <SectionProjects id="projects">
           <ProjectWrapper>
               {/*<div className="flex flex-col w-full mb-20">*/}
               {/*    <h1 className="sm:text-4xl text-3xl font-medium title-font mb-4 text-white">*/}
