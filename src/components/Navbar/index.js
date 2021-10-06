@@ -58,7 +58,7 @@ const Navbar = ({ isOpen, toggle }) => {
             <NavBtnLink href="https://twitter.com/divensek">
               <AiFillTwitterCircle></AiFillTwitterCircle>
             </NavBtnLink>
-            <NavBtnLink href="https://www.linkedin.com/in/divensek">
+            <NavBtnLink href="https://www.linkedin.com/in/mikolajczukpiotr">
               <AiFillLinkedin></AiFillLinkedin>
             </NavBtnLink>
           </NavBtn>
