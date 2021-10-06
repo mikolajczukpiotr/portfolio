@@ -4,17 +4,6 @@ export const SectionProjects= styled.div`
   background-color: gray(90);
   text-decoration: none;
 `;
-export const ProjectWrapper = styled.div`
-  display: grid;
-  z-index: 1;
-  ${() => `height: calc(100vh - 80px);`}
-  width: 100%;
-  max-width: 1100px;
-  margin-right: auto;
-  margin-left: auto;
-  padding: 0 24px;
-  justify-content: center;
-`;
 export const ProjectCard = styled.div`
   display: flex;
   position: relative;
