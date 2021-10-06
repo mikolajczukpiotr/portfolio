@@ -24,13 +24,31 @@ const Navbar = ({ isOpen, toggle }) => {
           </MobileIcon>
           <NavMenu>
             <NavItem>
-              <NavLinks to="about">About</NavLinks>
+              <NavLinks
+                  to="about"
+                  spy
+                  smooth={true}
+                  duration={500}
+              >
+                About</NavLinks>
             </NavItem>
             <NavItem>
-              <NavLinks to="projects">Projects</NavLinks>
+              <NavLinks
+                  to="projects"
+                  spy
+                  smooth={true}
+                  duration={500}
+              >
+                Projects</NavLinks>
             </NavItem>
             <NavItem>
-              <NavLinks to="contact">Contact</NavLinks>
+              <NavLinks
+                  to="contact"
+                  spy
+                  smooth={true}
+                  duration={500}
+              >
+                Contact</NavLinks>
             </NavItem>
           </NavMenu>
           <NavBtn>
@@ -40,7 +58,7 @@ const Navbar = ({ isOpen, toggle }) => {
             <NavBtnLink href="https://twitter.com/divensek">
               <AiFillTwitterCircle></AiFillTwitterCircle>
             </NavBtnLink>
-            <NavBtnLink href="https://www.linkedin.com/in/piotr-miko%C5%82ajczuk-38b1b0195/">
+            <NavBtnLink href="https://www.linkedin.com/in/divensek">
               <AiFillLinkedin></AiFillLinkedin>
             </NavBtnLink>
           </NavBtn>

@@ -7,7 +7,7 @@ export const SectionProjects= styled.div`
 export const ProjectWrapper = styled.div`
   display: grid;
   z-index: 1;
-  ${() => `height: calc(100vh - 80px);`}
+  ${() => `height: calc(100vh + 1px);`}
   width: 100%;
   max-width: 1100px;
   margin-right: auto;
