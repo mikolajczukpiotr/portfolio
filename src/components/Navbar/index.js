@@ -18,7 +18,13 @@ const Navbar = ({ isOpen, toggle }) => {
     <>
       <Nav>
         <NavbarContainer>
-          <NavLogo to="/">Piotr Mikołajczuk</NavLogo>
+          <NavLogo
+              to="home"
+              offset={-80}
+              smooth={true}
+              duration={500}
+          >
+            Piotr Mikołajczuk</NavLogo>
           <MobileIcon onClick={toggle}>
             {!isOpen ? <FaBars /> : null}
           </MobileIcon>
@@ -30,7 +36,7 @@ const Navbar = ({ isOpen, toggle }) => {
                   smooth={true}
                   duration={500}
               >
-                About</NavLinks>
+                O mnie</NavLinks>
             </NavItem>
             <NavItem>
               <NavLinks
@@ -39,7 +45,7 @@ const Navbar = ({ isOpen, toggle }) => {
                   smooth={true}
                   duration={500}
               >
-                Projects</NavLinks>
+                Projekty</NavLinks>
             </NavItem>
             <NavItem>
               <NavLinks
@@ -48,17 +54,17 @@ const Navbar = ({ isOpen, toggle }) => {
                   smooth={true}
                   duration={500}
               >
-                Contact</NavLinks>
+                Kontakt</NavLinks>
             </NavItem>
           </NavMenu>
           <NavBtn>
-            <NavBtnLink href="https://github.com/mikolajczukpiotr">
+            <NavBtnLink href="https://github.com/mikolajczukpiotr" target="_blank">
               <AiFillGithub></AiFillGithub>
             </NavBtnLink>
-            <NavBtnLink href="https://twitter.com/divensek">
+            <NavBtnLink href="https://twitter.com/divensek" target="_blank" >
               <AiFillTwitterCircle></AiFillTwitterCircle>
             </NavBtnLink>
-            <NavBtnLink href="https://www.linkedin.com/in/mikolajczukpiotr">
+            <NavBtnLink href="https://www.linkedin.com/in/mikolajczukpiotr" target="_blank" >
               <AiFillLinkedin></AiFillLinkedin>
             </NavBtnLink>
           </NavBtn>

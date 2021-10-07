@@ -2,34 +2,53 @@ import React from "react";
 import {
   CloseIcon,
   Icon,
+  NonStyledAnchor,
   SidebarContainer,
   SidebarLink,
   SidebarMenu,
   SidebarWrapper,
   SideBtnWrap,
 } from "./SiedebarElements";
-import { AiFillGithub } from "react-icons/all";
+import {
+  AiFillGithub,
+  AiFillLinkedin,
+  AiFillTwitterCircle,
+} from "react-icons/all";
 
 const Sidebar = ({ isOpen, toggle }) => {
   return (
-    <SidebarContainer isOpen={isOpen} onClick={toggle}>
+    <SidebarContainer isOpen={isOpen}>
       <Icon onClick={toggle}>
         <CloseIcon />
       </Icon>
       <SidebarWrapper>
         <SidebarMenu>
           <SidebarLink to="about" onClick={toggle}>
-            About
+            O mnie
           </SidebarLink>
           <SidebarLink to="projects" onClick={toggle}>
-            Projects
+            Projekty
           </SidebarLink>
           <SidebarLink to="contact" onClick={toggle}>
-            Contact
+            Kontakt
           </SidebarLink>
         </SidebarMenu>
         <SideBtnWrap>
-          <AiFillGithub to="https://github.com/mikolajczukpiotr"></AiFillGithub>
+          <NonStyledAnchor
+            href="https://github.com/mikolajczukpiotr"
+            target="_blank"
+          >
+            <AiFillGithub color="white" />
+          </NonStyledAnchor>
+          <NonStyledAnchor href="https://twitter.com/divensek" target="_blank">
+            <AiFillTwitterCircle color="white" />
+          </NonStyledAnchor>
+          <NonStyledAnchor
+            href="https://www.linkedin.com/in/mikolajczukpiotr"
+            target="_blank"
+          >
+            <AiFillLinkedin color="white" />
+          </NonStyledAnchor>
         </SideBtnWrap>
       </SidebarWrapper>
     </SidebarContainer>
