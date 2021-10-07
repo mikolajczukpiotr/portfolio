@@ -23,7 +23,6 @@ const InfoSection = ({
   headline,
   darkText,
   description,
-  img,
   alt,
 }) => {
   return (
