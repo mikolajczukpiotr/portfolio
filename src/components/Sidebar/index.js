@@ -23,13 +23,30 @@ const Sidebar = ({ isOpen, toggle }) => {
       </Icon>
       <SidebarWrapper>
         <SidebarMenu>
-          <SidebarLink to="about" onClick={toggle}>
+          <SidebarLink
+            to="about"
+            offset={-80}
+            smooth={true}
+            duration={500}
+            onClick={toggle}
+          >
             O mnie
           </SidebarLink>
-          <SidebarLink to="projects" onClick={toggle}>
+          <SidebarLink
+            to="projects"
+            offset={-80}
+            smooth={true}
+            duration={500}
+            onClick={toggle}
+          >
             Projekty
           </SidebarLink>
-          <SidebarLink to="contact" onClick={toggle}>
+          <SidebarLink
+            to="contact"
+            smooth={true}
+            duration={500}
+            onClick={toggle}
+          >
             Kontakt
           </SidebarLink>
         </SidebarMenu>

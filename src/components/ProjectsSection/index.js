@@ -11,14 +11,15 @@ import {
   ProjectSubtitle,
   ProjectText,
   ProjectTitle,
+  ProjectWrapper,
   SectionProjects,
 } from "./ProjectsElements";
-import { Heading, InfoWrapper, Subtitle, TopLine } from "../AllComponentsStyle";
+import { Heading, Subtitle, TopLine } from "../AllComponentsStyle";
 
-export default function ProjectSection() {
+const ProjectSection = () => {
   return (
     <SectionProjects id="projects">
-      <InfoWrapper>
+      <ProjectWrapper>
         <ProjectRow>
           <TopLine>PROJEKTY</TopLine>
           <Heading>Moje Projekty</Heading>
@@ -42,7 +43,8 @@ export default function ProjectSection() {
             </ProjectScale>
           ))}
         </ProjectFlex>
-      </InfoWrapper>
+      </ProjectWrapper>
     </SectionProjects>
   );
-}
+};
+export default ProjectSection;
