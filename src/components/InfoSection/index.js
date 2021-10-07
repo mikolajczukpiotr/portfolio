@@ -2,16 +2,13 @@ import React from "react";
 import {
   Column1,
   Column2,
-  Heading,
   Img,
   ImgWrap,
   InfoContainer,
   InfoRow,
-  InfoWrapper,
-  Subtitle,
   TextWrapper,
-  TopLine,
 } from "./InfoElements";
+import { Heading, InfoWrapper, Subtitle, TopLine } from "../AllComponentsStyle";
 import logo from "../../images/one.svg";
 
 const InfoSection = ({

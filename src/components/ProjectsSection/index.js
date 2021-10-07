@@ -13,12 +13,7 @@ import {
   ProjectTitle,
   SectionProjects,
 } from "./ProjectsElements";
-import {
-  Heading,
-  InfoWrapper,
-  Subtitle,
-  TopLine,
-} from "../InfoSection/InfoElements";
+import { Heading, InfoWrapper, Subtitle, TopLine } from "../AllComponentsStyle";
 
 export default function ProjectSection() {
   return (
