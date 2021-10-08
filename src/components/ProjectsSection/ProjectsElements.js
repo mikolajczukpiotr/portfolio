@@ -4,15 +4,12 @@ export const ProjectWrapper = styled.div`
   display: flex;
   flex-direction: column;
   z-index: 1;
-  height: 100vh;
+  min-height: 100vh;
   width: 80%;
   max-width: 1100px;
   margin-right: auto;
   margin-left: auto;
   justify-content: center;
-  @media screen and (max-width: 768px) {
-    height: 150vh;
-  }
 `;
 
 export const SectionProjects = styled.div`
@@ -103,10 +100,6 @@ export const ProjectDescription = styled.p`
   @media screen and (max-width: 768px) {
     display: none;
   }
-`;
-export const ProjectRow = styled.div`
-  align-items: center;
-  margin-top: 5rem;
 `;
 export const ProjectBtnLink = styled.span`
   border-radius: 40px;

@@ -16,20 +16,4 @@ export const projects = [
     image: ProjectTwo,
     link: "https://reedbarger.com",
   },
-  {
-    title: "React Tracks",
-    subtitle: "React and Python",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium dolore rerum",
-    image: ProjectTwo,
-    link: "https://reedbarger.com",
-  },
-  {
-    title: "React Tracks",
-    subtitle: "React and Python",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium dolore rerum",
-    image: ProjectTwo,
-    link: "https://reedbarger.com",
-  },
 ];

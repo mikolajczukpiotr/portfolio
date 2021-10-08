@@ -43,6 +43,7 @@ const Sidebar = ({ isOpen, toggle }) => {
           </SidebarLink>
           <SidebarLink
             to="contact"
+            offset={-80}
             smooth={true}
             duration={500}
             onClick={toggle}

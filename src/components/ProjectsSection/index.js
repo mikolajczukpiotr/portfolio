@@ -6,7 +6,6 @@ import {
   ProjectDescription,
   ProjectFlex,
   ProjectImage,
-  ProjectRow,
   ProjectScale,
   ProjectSubtitle,
   ProjectText,
@@ -14,7 +13,7 @@ import {
   ProjectWrapper,
   SectionProjects,
 } from "./ProjectsElements";
-import { Heading, Subtitle, TopLine } from "../AllComponentsStyle";
+import { Heading, ProjectRow, Subtitle, TopLine } from "../AllComponentsStyle";
 
 const ProjectSection = () => {
   return (

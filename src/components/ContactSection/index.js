@@ -1,33 +1,34 @@
-import { useForm } from "react-hook-form";
-import emailjs from "emailjs-com";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.min.css";
-import { Heading, InfoWrapper, TopLine } from "../AllComponentsStyle";
+import { Controller, useForm } from "react-hook-form";
+import {
+  Heading,
+  InfoWrapper,
+  ProjectRow,
+  TopLine,
+} from "../AllComponentsStyle";
+import {
+  Alert,
+  Button,
+  FormControl,
+  FormHelperText,
+  TextField,
+} from "@mui/material";
+import { ContactButton, ContactForm, ContactWrapper } from "./ContactElements";
+import * as emailjs from "emailjs-com";
+import { useState } from "react";
 
 const ContactSection = () => {
   const {
     register,
     handleSubmit,
+    control,
     reset,
     formState: { errors },
   } = useForm();
-
-  // Function that displays a success toast on bottom right of the page when form submission is successful
-  const toastifySuccess = () => {
-    toast("Form sent!", {
-      position: "bottom-right",
-      autoClose: 5000,
-      hideProgressBar: true,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: false,
-      className: "submit-feedback success",
-      toastId: "notifyToast",
-    });
-  };
-
-  // Function called on submit that uses emailjs to send email of valid contact form
+  const [loading, setLoading] = useState(false);
+  const [showSuccessAlert, setShowSuccessAlert] = useState(false);
+  const [showErrorAlert, setShowErrorAlert] = useState(false);
   const onSubmit = async (data) => {
+    setLoading(true);
     const { name, email, subject, message } = data;
     try {
       const templateParams = {
@@ -38,109 +39,176 @@ const ContactSection = () => {
       };
 
       await emailjs.send(
-        "service_yo27b0h",
+        "servicedf_yo27b0h",
         "template_u4tfnb6",
         templateParams,
         "user_ynj1ckEe2VFLeylOvGSd2"
       );
 
-      reset();
-      toastifySuccess();
+      reset({ name: "", email: "", subject: "", message: "" });
+      setShowSuccessAlert(true);
+      setTimeout(() => {
+        setShowSuccessAlert(false);
+      }, 2500);
     } catch (e) {
       console.log(e);
+      setShowErrorAlert(true);
+      setTimeout(() => {
+        setShowErrorAlert(false);
+      }, 2500);
+    } finally {
+      setLoading(false);
     }
   };
 
   return (
-    <InfoWrapper id="contact">
-      <TopLine>KONTAKT</TopLine>
-      <Heading>Skontaktuj sie ze mną</Heading>
-      <form id="contact-form" onSubmit={handleSubmit(onSubmit)} noValidate>
-        <div className="row formRow">
-          <div className="col-6">
-            <input
-              type="text"
-              name="name"
-              {...register("name", {
-                required: {
-                  value: true,
-                  message: "Please enter your name",
-                },
-                maxLength: {
-                  value: 30,
-                  message: "Please use 30 characters or less",
-                },
-              })}
-              className="form-control formInput"
-              placeholder="Name"
-            ></input>
-            {errors.name && (
-              <span className="errorMessage">{errors.name.message}</span>
+    <ContactWrapper>
+      <InfoWrapper id="contact">
+        <ProjectRow>
+          <TopLine>KONTAKT</TopLine>
+          <Heading>Skontaktuj sie ze mną</Heading>
+        </ProjectRow>
+        <ContactForm
+          id="contact-form"
+          onSubmit={handleSubmit(onSubmit)}
+          noValidate
+        >
+          <Controller
+            name="name"
+            control={control}
+            defaultValue=""
+            render={({ field }) => (
+              <FormControl error variant="standard">
+                <TextField
+                  variant="outlined"
+                  required
+                  label="Imię"
+                  fullWidth
+                  margin={"normal"}
+                  error={!!errors?.name}
+                  {...register("name", {
+                    required: true,
+                    maxLength: 40,
+                  })}
+                  {...field}
+                />
+                {errors?.name?.type === "required" && (
+                  <FormHelperText id="name">
+                    To pole jest wymagane
+                  </FormHelperText>
+                )}
+                {errors?.name?.type === "maxLength" && (
+                  <FormHelperText id="name">
+                    Za duża ilość znaków
+                  </FormHelperText>
+                )}
+              </FormControl>
             )}
-          </div>
-          <div className="col-6">
-            <input
-              type="email"
-              name="email"
-              {...register("email", {
-                required: true,
-                pattern: /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
-              })}
-              className="form-control formInput"
-              placeholder="Email address"
-            ></input>
-            {errors.email && (
-              <span className="errorMessage">
-                Please enter a valid email address
-              </span>
+          />
+          <Controller
+            name="email"
+            control={control}
+            defaultValue=""
+            render={({ field }) => (
+              <FormControl error variant="standard">
+                <TextField
+                  variant="outlined"
+                  required
+                  label="E-mail"
+                  margin={"normal"}
+                  fullWidth
+                  error={!!errors?.email}
+                  {...register("email", {
+                    required: true,
+                    pattern: /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
+                  })}
+                  {...field}
+                />
+                {errors?.email?.type === "required" && (
+                  <FormHelperText id="email">
+                    To pole jest wymagane
+                  </FormHelperText>
+                )}
+                {errors?.email?.type === "pattern" && (
+                  <FormHelperText id="email">
+                    Nie prawidłowy adres e-mail
+                  </FormHelperText>
+                )}
+              </FormControl>
             )}
-          </div>
-        </div>
-        <div className="row formRow">
-          <div className="col">
-            <input
-              type="text"
-              name="subject"
-              {...register("subject", {
-                required: {
-                  value: true,
-                  message: "Please enter a subject",
-                },
-                maxLength: {
-                  value: 75,
-                  message: "Subject cannot exceed 75 characters",
-                },
-              })}
-              className="form-control formInput"
-              placeholder="Subject"
-            ></input>
-            {errors.subject && (
-              <span className="errorMessage">{errors.subject.message}</span>
+          />
+          <Controller
+            name="subject"
+            control={control}
+            defaultValue=""
+            render={({ field }) => (
+              <FormControl error variant="standard">
+                <TextField
+                  variant="outlined"
+                  required
+                  label="Temat"
+                  fullWidth
+                  margin={"normal"}
+                  error={!!errors?.subject}
+                  {...register("subject", {
+                    required: true,
+                  })}
+                  {...field}
+                />
+                {errors?.subject?.type === "required" && (
+                  <FormHelperText id="subject">
+                    To pole jest wymagane
+                  </FormHelperText>
+                )}
+              </FormControl>
             )}
-          </div>
-        </div>
-        <div className="row formRow">
-          <div className="col">
-            <textarea
-              rows={3}
-              name="message"
-              {...register("message", {
-                required: true,
-              })}
-              className="form-control formInput"
-              placeholder="Message"
-            ></textarea>
-            {errors.message && (
-              <span className="errorMessage">Please enter a message</span>
+          />
+          <Controller
+            name="message"
+            control={control}
+            defaultValue=""
+            render={({ field }) => (
+              <FormControl error variant="standard">
+                <TextField
+                  variant="outlined"
+                  required
+                  rows={5}
+                  multiline
+                  label="Wiadomość"
+                  margin={"normal"}
+                  fullWidth
+                  error={!!errors?.message}
+                  {...register("message", {
+                    required: true,
+                  })}
+                  {...field}
+                />
+                {errors?.message?.type === "required" && (
+                  <FormHelperText id="email">
+                    To pole jest wymagane
+                  </FormHelperText>
+                )}
+              </FormControl>
             )}
-          </div>
-        </div>
-        <button className="submit-btn" type="submit">
-          Submit
-        </button>
-      </form>
-      <ToastContainer />
-    </InfoWrapper>
+          />
+          {showErrorAlert && (
+            <Alert severity="error">Wiadomość nie została wysłana :(</Alert>
+          )}
+          {showSuccessAlert && <Alert>Wiadomość została wysłana</Alert>}
+          <ContactButton>
+            <Button
+              fullWidth
+              variant="contained"
+              className="submit-btn"
+              type="submit"
+              disabled={loading}
+            >
+              Submit
+            </Button>
+          </ContactButton>
+        </ContactForm>
+      </InfoWrapper>
+    </ContactWrapper>
   );
 };
 
