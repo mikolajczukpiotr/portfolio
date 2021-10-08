@@ -14,6 +14,7 @@ import {
   SectionProjects,
 } from "./ProjectsElements";
 import { Heading, ProjectRow, Subtitle, TopLine } from "../AllComponentsStyle";
+import { Button } from "@mui/material";
 
 const ProjectSection = () => {
   return (
@@ -36,7 +37,9 @@ const ProjectSection = () => {
                   <ProjectSubtitle>{project.subtitle}</ProjectSubtitle>
                   <ProjectTitle>{project.title}</ProjectTitle>
                   <ProjectDescription>{project.description}</ProjectDescription>
-                  <ProjectBtnLink href={project.link}>ZOBACZ</ProjectBtnLink>
+                  <Button variant="contained" href={project.link}>
+                    Zobacz
+                  </Button>
                 </ProjectText>
               </ProjectCard>
             </ProjectScale>

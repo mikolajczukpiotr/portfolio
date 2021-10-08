@@ -203,7 +203,7 @@ const ContactSection = () => {
               type="submit"
               disabled={loading}
             >
-              Submit
+              Wyślij
             </Button>
           </ContactButton>
         </ContactForm>
