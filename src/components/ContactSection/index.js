@@ -39,10 +39,10 @@ const ContactSection = () => {
       };
 
       await emailjs.send(
-        "servicedf_yo27b0h",
-        "template_u4tfnb6",
+        process.env.REACT_APP_SERVICE_CODE,
+        process.env.REACT_APP_TEMPLATE_ID,
         templateParams,
-        "user_ynj1ckEe2VFLeylOvGSd2"
+        process.env.REACT_APP_USER_ID
       );
 
       reset({ name: "", email: "", subject: "", message: "" });
