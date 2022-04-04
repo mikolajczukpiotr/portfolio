@@ -4,7 +4,7 @@ export const InfoWrapper = styled.div`
   display: flex;
   flex-direction: column;
   z-index: 1;
-  height: 100vh;
+  min-height: 100vh;
   width: 80%;
   max-width: 1100px;
   margin-right: auto;
@@ -39,4 +39,8 @@ export const Subtitle = styled.p`
   font-size: 18px;
   line-height: 24px;
   color: ${({ lightText }) => (lightText ? "#010606" : "#fff")};
+`;
+export const ProjectRow = styled.div`
+  align-items: center;
+  margin-top: 5rem;
 `;

@@ -6,19 +6,20 @@ import {
   ProjectDescription,
   ProjectFlex,
   ProjectImage,
-  ProjectRow,
   ProjectScale,
   ProjectSubtitle,
   ProjectText,
   ProjectTitle,
+  ProjectWrapper,
   SectionProjects,
 } from "./ProjectsElements";
-import { Heading, InfoWrapper, Subtitle, TopLine } from "../AllComponentsStyle";
+import { Heading, ProjectRow, Subtitle, TopLine } from "../AllComponentsStyle";
+import { Button } from "@mui/material";
 
-export default function ProjectSection() {
+const ProjectSection = () => {
   return (
     <SectionProjects id="projects">
-      <InfoWrapper>
+      <ProjectWrapper>
         <ProjectRow>
           <TopLine>PROJEKTY</TopLine>
           <Heading>Moje Projekty</Heading>
@@ -36,13 +37,16 @@ export default function ProjectSection() {
                   <ProjectSubtitle>{project.subtitle}</ProjectSubtitle>
                   <ProjectTitle>{project.title}</ProjectTitle>
                   <ProjectDescription>{project.description}</ProjectDescription>
-                  <ProjectBtnLink href={project.link}>ZOBACZ</ProjectBtnLink>
+                  <Button variant="contained" href={project.link}>
+                    Zobacz
+                  </Button>
                 </ProjectText>
               </ProjectCard>
             </ProjectScale>
           ))}
         </ProjectFlex>
-      </InfoWrapper>
+      </ProjectWrapper>
     </SectionProjects>
   );
-}
+};
+export default ProjectSection;

@@ -1,5 +1,17 @@
 import styled from "styled-components";
 
+export const ProjectWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
+  min-height: 100vh;
+  width: 80%;
+  max-width: 1100px;
+  margin-right: auto;
+  margin-left: auto;
+  justify-content: center;
+`;
+
 export const SectionProjects = styled.div`
   background-color: gray(90);
   text-decoration: none;
@@ -89,22 +101,18 @@ export const ProjectDescription = styled.p`
     display: none;
   }
 `;
-export const ProjectRow = styled.div`
-  align-items: center;
-  margin-top: 5rem;
-`;
-export const ProjectBtnLink = styled.a`
+export const ProjectBtnLink = styled.span`
   border-radius: 40px;
   background: #87c2e9;
   white-space: nowrap;
   padding: 8px 20px;
   color: #010606;
-  font-size: 1.5vh;
+  font-size: 0.9rem;
   border: none;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
   text-decoration: none;
   @media screen and (max-width: 768px) {
-    font-size: 2vh;
-    margin: 0 20%;
+    font-size: 1rem;
+  }
 `;
