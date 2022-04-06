@@ -31,17 +31,17 @@ const Navbar = ({ isOpen, toggle }) => {
           <NavMenu>
             <NavItem>
               <NavLinks to="about" spy smooth={true} duration={500}>
-                O mnie
+                ABOUT ME
               </NavLinks>
             </NavItem>
             <NavItem>
               <NavLinks to="projects" spy smooth={true} duration={500}>
-                Projekty
+                PROJECTS
               </NavLinks>
             </NavItem>
             <NavItem>
               <NavLinks to="contact" spy smooth={true} duration={500}>
-                Kontakt
+                CONTACT
               </NavLinks>
             </NavItem>
           </NavMenu>

@@ -1,19 +1,18 @@
-import ProjectOne from "../../images/ProjectOne.jpg";
-import ProjectTwo from "../../images/ProjectTwo.jpg";
+import roulette from "../../images/roulette.png";
+import groupon from "../../images/groupon.png";
 export const projects = [
   {
     title: "Roulette",
     subtitle: "JavaScript",
-    description: "Prosta gra polegająca na ruletce. Gra jednoosobowa",
-    image: ProjectOne,
-    link: "https://reactbootcamp.com",
+    description: "A simple rule game. Single player game",
+    image: roulette,
+    link: "https://github.com/mikolajczukpiotr/roulette",
   },
   {
-    title: "React Tracks",
-    subtitle: "React and Python",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium dolore rerum",
-    image: ProjectTwo,
-    link: "https://reedbarger.com",
+    title: "Groupon clone",
+    subtitle: "React, next.js",
+    description: "A copy of a well-known Polish website with promotions",
+    image: groupon,
+    link: "https://github.com/mikolajczukpiotr/groupon-clone",
   },
 ];

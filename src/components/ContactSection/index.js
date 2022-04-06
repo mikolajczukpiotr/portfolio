@@ -65,8 +65,8 @@ const ContactSection = () => {
     <ContactWrapper>
       <InfoWrapper id="contact">
         <ProjectRow>
-          <TopLine>KONTAKT</TopLine>
-          <Heading>Skontaktuj sie ze mną</Heading>
+          <TopLine>CONTACT</TopLine>
+          <Heading>Contact with me</Heading>
         </ProjectRow>
         <ContactForm
           id="contact-form"
@@ -82,7 +82,7 @@ const ContactSection = () => {
                 <TextField
                   variant="outlined"
                   required
-                  label="Imię"
+                  label="First Name"
                   fullWidth
                   margin={"normal"}
                   error={!!errors?.name}
@@ -94,13 +94,11 @@ const ContactSection = () => {
                 />
                 {errors?.name?.type === "required" && (
                   <FormHelperText id="name">
-                    To pole jest wymagane
+                    This field is required
                   </FormHelperText>
                 )}
                 {errors?.name?.type === "maxLength" && (
-                  <FormHelperText id="name">
-                    Za duża ilość znaków
-                  </FormHelperText>
+                  <FormHelperText id="name">Too many characters</FormHelperText>
                 )}
               </FormControl>
             )}
@@ -126,12 +124,12 @@ const ContactSection = () => {
                 />
                 {errors?.email?.type === "required" && (
                   <FormHelperText id="email">
-                    To pole jest wymagane
+                    This field is required
                   </FormHelperText>
                 )}
                 {errors?.email?.type === "pattern" && (
                   <FormHelperText id="email">
-                    Nie prawidłowy adres e-mail
+                    Incorrect e-mail address
                   </FormHelperText>
                 )}
               </FormControl>
@@ -146,7 +144,7 @@ const ContactSection = () => {
                 <TextField
                   variant="outlined"
                   required
-                  label="Temat"
+                  label="Subject"
                   fullWidth
                   margin={"normal"}
                   error={!!errors?.subject}
@@ -157,7 +155,7 @@ const ContactSection = () => {
                 />
                 {errors?.subject?.type === "required" && (
                   <FormHelperText id="subject">
-                    To pole jest wymagane
+                    This field is required
                   </FormHelperText>
                 )}
               </FormControl>
@@ -174,7 +172,7 @@ const ContactSection = () => {
                   required
                   rows={5}
                   multiline
-                  label="Wiadomość"
+                  label="Message"
                   margin={"normal"}
                   fullWidth
                   error={!!errors?.message}
@@ -185,16 +183,16 @@ const ContactSection = () => {
                 />
                 {errors?.message?.type === "required" && (
                   <FormHelperText id="email">
-                    To pole jest wymagane
+                    This field is required{" "}
                   </FormHelperText>
                 )}
               </FormControl>
             )}
           />
           {showErrorAlert && (
-            <Alert severity="error">Wiadomość nie została wysłana :(</Alert>
+            <Alert severity="error">Message was not sent :(</Alert>
           )}
-          {showSuccessAlert && <Alert>Wiadomość została wysłana</Alert>}
+          {showSuccessAlert && <Alert>Message was sent</Alert>}
           <ContactButton>
             <Button
               fullWidth
@@ -203,7 +201,7 @@ const ContactSection = () => {
               type="submit"
               disabled={loading}
             >
-              Wyślij
+              SEND
             </Button>
           </ContactButton>
         </ContactForm>

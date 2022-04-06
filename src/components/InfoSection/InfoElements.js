@@ -36,10 +36,10 @@ export const ImgWrap = styled.div`
 `;
 
 export const Img = styled.img`
-  width: 60%;
+  width: 80%;
   margin: 10px;
   padding-right: 0;
-  border-radius: 50%;
+  border-radius: 20%;
   -webkit-box-shadow: 0px 7px 44px -11px rgba(0, 0, 0, 1);
   -moz-box-shadow: 0px 7px 44px -11px rgba(0, 0, 0, 1);
   box-shadow: 0px 7px 44px -11px rgba(0, 0, 0, 1);

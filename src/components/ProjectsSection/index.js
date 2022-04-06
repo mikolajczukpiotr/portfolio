@@ -20,11 +20,11 @@ const ProjectSection = () => {
     <SectionProjects id="projects">
       <ProjectWrapper>
         <ProjectRow>
-          <TopLine>PROJEKTY</TopLine>
-          <Heading>Moje Projekty</Heading>
+          <TopLine>PROJECTS</TopLine>
+          <Heading>My projects</Heading>
           <Subtitle lightText="true">
-            Moje projekty które stworzyłem, niektóre są dosyć proste. Ale
-            znaczące dla mnie
+            My first independent projects. More projects can be seen on my
+            github
           </Subtitle>
         </ProjectRow>
         <ProjectFlex>
@@ -37,7 +37,7 @@ const ProjectSection = () => {
                   <ProjectTitle>{project.title}</ProjectTitle>
                   <ProjectDescription>{project.description}</ProjectDescription>
                   <Button variant="contained" href={project.link}>
-                    Zobacz
+                    CHECK
                   </Button>
                 </ProjectText>
               </ProjectCard>
