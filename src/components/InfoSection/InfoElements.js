@@ -36,7 +36,15 @@ export const ImgWrap = styled.div`
 `;
 
 export const Img = styled.img`
-  width: 100%;
-  margin: 0 0 10px 0;
+  width: 60%;
+  margin: 10px;
   padding-right: 0;
+  border-radius: 50%;
+  -webkit-box-shadow: 0px 7px 44px -11px rgba(0, 0, 0, 1);
+  -moz-box-shadow: 0px 7px 44px -11px rgba(0, 0, 0, 1);
+  box-shadow: 0px 7px 44px -11px rgba(0, 0, 0, 1);
+
+  @media screen and (max-width: 768px) {
+    width: 100%;
+  } ;
 `;

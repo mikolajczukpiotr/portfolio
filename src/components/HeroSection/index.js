@@ -5,19 +5,20 @@ import {
   HeroContent,
   HeroH1,
   HeroP,
-  VideoBg,
+  ImgBg,
 } from "./HeroElements";
-import Video from "../../videos/video.mp4";
+import Img from "../../images/background.jpg";
 
 const HeroSection = () => {
   return (
     <HeroContainer id="home">
       <HeroBg>
-        <VideoBg autoPlay loop muted src={Video} type="video/mp4" />
+        <ImgBg src={Img} />
       </HeroBg>
       <HeroContent>
-        <HeroH1>Hi There! 👋🏻</HeroH1>
-        <HeroP>I'm junior frontend developer</HeroP>
+        <HeroP>WELCOME IN MY WORLD</HeroP>
+        <HeroH1>Hi, I’m Piotr Mikołajczuk</HeroH1>
+        <HeroH1>Frontend Developer.</HeroH1>
       </HeroContent>
     </HeroContainer>
   );

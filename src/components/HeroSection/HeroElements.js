@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const HeroContainer = styled.div`
   background: #0c0c0c;
   display: flex;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
   padding: 0 30px;
   ${() => `height: calc(100vh - 80px);`}
@@ -22,10 +22,9 @@ export const HeroBg = styled.div`
   overflow: hidden;
 `;
 
-export const VideoBg = styled.video`
+export const ImgBg = styled.img`
   width: 100%;
   height: 100%;
-
   -o-object-fit: cover;
   object-fit: cover;
   background: #232a34;
@@ -38,11 +37,11 @@ export const HeroContent = styled.div`
   padding: 8px 24px;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: start;
 `;
 export const HeroH1 = styled.h1`
   color: #ffff;
-  font-size: 48px;
+  font-size: 64px;
   text-align: center;
 
   @media screen and (max-width: 768px) {
@@ -55,10 +54,12 @@ export const HeroH1 = styled.h1`
 
 export const HeroP = styled.p`
   margin-top: 16px;
-  font-size: 24px;
+  font-family: Poppins, sans-serif;
+  font-size: 20px;
+  font-weight: lighter;
   text-align: center;
   max-width: 600px;
-  color: #87c2e9;
+  color: lightgray;
 
   @media screen and (max-width: 768px) {
     font-size: 20px;
