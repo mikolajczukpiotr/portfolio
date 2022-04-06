@@ -9,12 +9,12 @@ import {
   TextWrapper,
 } from "./InfoElements";
 import { Heading, InfoWrapper, Subtitle, TopLine } from "../AllComponentsStyle";
-import logo from "../../images/one.svg";
 
 const InfoSection = ({
   lightBg,
   id,
   imgStart,
+  img,
   topLine,
   lightText,
   headline,
@@ -36,7 +36,7 @@ const InfoSection = ({
             </Column1>
             <Column2>
               <ImgWrap>
-                <Img src={logo} alt={alt} />
+                <Img src={img} alt={alt} />
               </ImgWrap>
             </Column2>
           </InfoRow>

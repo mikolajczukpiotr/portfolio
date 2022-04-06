@@ -1,7 +1,6 @@
 import React from "react";
 import { projects } from "./Data.js";
 import {
-  ProjectBtnLink,
   ProjectCard,
   ProjectDescription,
   ProjectFlex,
