@@ -1,14 +1,14 @@
-import img from '../../images/avatar.png';
+import img from "../../images/avatar.png";
 
 export const homeObjOne = {
   id: "about",
   lightBg: true,
   lightText: false,
   lightTextDesc: false,
-  topLine: "O MNIE",
-  headline: "Hej jestem Piotr",
+  topLine: "ABOUT ME",
+  headline: "Hi, i'm Piotr",
   description:
-    "Jestem młodym kreatywnym, młodym programistą. Podczas pisania kodu, zawsze zwracam uwagę na detale. Staram otaczać się ludźmi przy których mogę się rozwijać. Jestem otwarty na wszelkiego rodzaju wskazówki, które pomogą rozwijać moje umiejętności.\n",
+    "I am a young and creative programmer. When writing code, I always pay attention to details. I try to surround myself with people with whom I can develop. I am open to all kinds of tips that will help me develop my skills. I started my adventure with programming from 2019",
   imgStart: false,
   img: img,
   alt: "coder",

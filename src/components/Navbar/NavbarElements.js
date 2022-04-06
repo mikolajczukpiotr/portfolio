@@ -93,12 +93,10 @@ export const NavBtn = styled.nav`
 `;
 export const NavBtnLink = styled.a`
   margin-left: 14px;
-  border-radius: 40px;
-  background: #87c2e9;
   white-space: nowrap;
   padding: 10px 10px 6px 10px;
-  color: #010606;
-  font-size: 24px;
+  color: #ffff;
+  font-size: 32px;
   border: none;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
